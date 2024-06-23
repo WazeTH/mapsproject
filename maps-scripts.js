@@ -44,16 +44,6 @@ async function loadDistrictColorMapping() {
 
 loadDistrictColorMapping();
 
-fetch(districtColorMapping)
-    .then(response => response.json())
-    .then(data => {
-        districtColorMapping = data;
-        console.log(districtColorMapping);
-    })
-    .catch(error => {
-        console.error('Error loading district color mappings:', error);
-    });
-
 function getFeatureStyle(feature) {
     var districtCode = feature.properties.ADM2_PCODE;
     var defaultStyle = { color: '#00FFFF', fillOpacity: 0.2, weight: 2 };
