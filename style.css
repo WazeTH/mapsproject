@@ -3,12 +3,16 @@
     #sidebar { height: 80%; width: 40%; overflow-y: auto; padding: 10px; font-family: "Prompt", sans-serif; }
     .custom-tooltip {
         font-size: 14px;
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 0.5px solid #333;
+        background: transparent;
+        /*background-color: rgba(255, 255, 255, 0.8); */
+        border: none; /* 0.5px solid #333; */
+        text-align: center;
+        /*
         padding-top: 0.5px;
         padding-right: 2px;
         padding-bottom: 0.5px;
         padding-left: 2px;
+        */
     }
 
     .attribute-table {
@@ -77,121 +81,121 @@
     }
 
     .wrap-box {
-    position: relative;
-    display: inline-flex; /* Use flexbox for alignment */
-    align-items: center; /* Align items vertically */
+        position: relative;
+        display: inline-flex;
+        align-items: center;
     }
 
     .copy-icon {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 3px 8px;
-    cursor: not-allowed;
-    margin-left: 5px; /* Add margin to separate from the button */
+        display: none;
+        border: 1px solid #ccc;
+        padding: 3px 8px;
+        cursor: not-allowed;
+        margin-left: 5px;
     }
 
     .search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
     }
 
     #searchInput {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-    font-family: "Prompt", sans-serif;
-    font-size: 16px;
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        font-family: "Prompt", sans-serif;
+        font-size: 16px;
     }
 
     #searchInput:focus {
-    border-color: #007bff;
+        border-color: #007bff;
     }
 
     #geolocationInput {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-    font-family: "Prompt", sans-serif;
-    font-size: 16px;
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        font-family: "Prompt", sans-serif;
+        font-size: 16px;
     }
 
     #geolocationInput:focus {
-    border-color: #007bff;
+        border-color: #007bff;
     }
 
     .search-container button {
-    width: 20%;
-    padding: 10px;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-family: "Prompt", sans-serif;
-    font-size: 16px;
+        width: 20%;
+        padding: 10px;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        font-family: "Prompt", sans-serif;
+        font-size: 16px;
     }
 
     .search-container button:hover {
-    background-color: #0056b3;
+        background-color: #0056b3;
     }
 
     #suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 80%;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    max-height: 150px;
-    overflow-y: auto;
-    z-index: 1000;
-    border-radius: 0 0 4px 4px;
-    display: none; /* Hide suggestions by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 80%;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        max-height: 150px;
+        overflow-y: auto;
+        z-index: 1000;
+        border-radius: 0 0 4px 4px;
+        display: none;
     }
 
     #suggestions div {
-    padding: 10px;
-    cursor: pointer;
-    font-family: "Prompt", sans-serif;
+        padding: 10px;
+        cursor: pointer;
+        font-family: "Prompt", sans-serif;
     }
 
     #suggestions div:hover {
-    background-color: #f0f0f0;
+        background-color: #f0f0f0;
     }
 
     .map-alert-popup {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 0, 0, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 1000;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    text-align: center;
-    display: none; /* Initially hidden */
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 0, 0, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        display: none;
     }
 
     .spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
@@ -200,15 +204,15 @@
     }
 
     #map {
-    visibility: hidden;
+        visibility: hidden;
     }
 
     .custom-tooltip-2 {
-    font-size: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none; 
-    padding: 2px 4px;
-    text-align: center;
-    color: white; 
-    line-height: 0.9;
+        font-size: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none; 
+        padding: 2px 4px;
+        text-align: center;
+        color: white; 
+        line-height: 0.9;
     }
