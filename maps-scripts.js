@@ -10,10 +10,10 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 var mapElement = document.getElementById('map');
 var geojsonPrefix = mapElement.getAttribute('data-geojson-prefix');
 
-var geojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}.geojson';
-var SPGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-SP.geojson';
-var SAGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-SA.geojson';
-var STGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-ST.geojson';
+var geojsonUrl = `https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}.geojson`;
+var SPGeojsonUrl = `https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-SP.geojson`;
+var SAGeojsonUrl = `https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-SA.geojson`;
+var STGeojsonUrl = `https://wazeth.github.io/mapsproject/geojson/${geojsonPrefix}-ST.geojson`;
 
 console.log(geojsonUrl);
 console.log(SPGeojsonUrl);
