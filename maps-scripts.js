@@ -28,7 +28,8 @@ var geojsonData;
 var currentSuggestionIndex = -1;
 var processedADM2_PCODE = {};
 
-var districtColorMapping = `https://wazeth.github.io/mapsproject/${geojsonPrefix}_d_color.json`;
+var districtColorMapping = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
+console.log(districtColorMapping);
 
 function getFeatureStyle(feature) {
     var districtCode = feature.properties.ADM2_PCODE;
