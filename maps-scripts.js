@@ -31,11 +31,21 @@ var processedADM2_PCODE = {};
 var districtColorMapping = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
 console.log(districtColorMapping);
 
+fetch(districtColorMappingURL)
+    .then(response => response.json())
+    .then(data => {
+        districtColorMapping = data;
+        console.log(districtColorMapping);
+    })
+    .catch(error => {
+        console.error('Error loading district color mappings:', error);
+    });
+
 function getFeatureStyle(feature) {
     var districtCode = feature.properties.ADM2_PCODE;
     var defaultStyle = { color: '#00FFFF', fillOpacity: 0.2, weight: 2 };
 
-    if (districtColorMapping.hasOwnProperty(districtCode)) {
+    if (districtColorMapping && districtColorMapping.hasOwnProperty(districtCode)) {
         return { color: districtColorMapping[districtCode], fillOpacity: 0.2, weight: 2 };
     } else {
         return defaultStyle;
