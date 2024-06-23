@@ -28,7 +28,7 @@ var geojsonData;
 var currentSuggestionIndex = -1;
 var processedADM2_PCODE = {};
 
-var districtColorMapping = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
+var districtColorMappingURL = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
 console.log(districtColorMapping);
 
 fetch(districtColorMappingURL)
