@@ -28,8 +28,21 @@ var geojsonData;
 var currentSuggestionIndex = -1;
 var processedADM2_PCODE = {};
 
-var districtColorMapping = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
-console.log(districtColorMapping);
+var districtColorMappingURL = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
+console.log(districtColorMappingURL);
+
+async function loadDistrictColorMapping() {
+    try {
+        const response = await fetch(districtColorMappingURL);
+        districtColorMapping = await response.json();
+        console.log(districtColorMapping);
+
+    } catch (error) {
+        console.error('Error loading district color mappings:', error);
+    }
+}
+
+loadDistrictColorMapping();
 
 fetch(districtColorMapping)
     .then(response => response.json())
