@@ -31,18 +31,15 @@ var processedADM2_PCODE = {};
 var districtColorMappingURL = `https://wazeth.github.io/mapsproject/json/${geojsonPrefix}_d_color.json`;
 console.log(districtColorMappingURL);
 
-async function loadDistrictColorMapping() {
-    try {
-        const response = await fetch(districtColorMappingURL);
-        districtColorMapping = await response.json();
+fetch(districtColorMappingURL)
+    .then(response => response.json())
+    .then(data => {
+        districtColorMapping = data;
         console.log(districtColorMapping);
-
-    } catch (error) {
+    })
+    .catch(error => {
         console.error('Error loading district color mappings:', error);
-    }
-}
-
-loadDistrictColorMapping();
+    });
 
 function getFeatureStyle(feature) {
     var districtCode = feature.properties.ADM2_PCODE;
