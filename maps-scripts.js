@@ -28,14 +28,7 @@ var geojsonData;
 var currentSuggestionIndex = -1;
 var processedADM2_PCODE = {};
 
-var districtColorMapping = {
-    'TH1101': '#5bc0eb',
-    'TH1102': '#fa7921',
-    'TH1103': '#9bc53d',
-    'TH1104': '#e55934',
-    'TH1105': '#fde74c',
-    'TH1106': '#FFD2B5'
-};
+var districtColorMapping = `https://wazeth.github.io/mapsproject/${geojsonPrefix}_d_color.json`;
 
 function getFeatureStyle(feature) {
     var districtCode = feature.properties.ADM2_PCODE;
