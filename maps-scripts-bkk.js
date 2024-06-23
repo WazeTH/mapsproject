@@ -10,10 +10,10 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 var mapElement = document.getElementById('map');
 var geojsonPrefix = mapElement.getAttribute('data-geojson-prefix');
 
-var geojsonUrl = 'https://raw.githubusercontent.com/WazeTH/mapsproject/main/geojson/10-bangkok.geojson';
-var SPGeojsonUrl = 'https://raw.githubusercontent.com/WazeTH/mapsproject/main/geojson/10-bangkok-SP.geojson';
-var SAGeojsonUrl = 'https://raw.githubusercontent.com/WazeTH/mapsproject/main/geojson/10-bangkok-SA.geojson';
-var STGeojsonUrl = 'https://raw.githubusercontent.com/WazeTH/mapsproject/main/geojson/10-bangkok-ST.geojson';
+var geojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/10-bangkok.geojson';
+var SPGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/10-bangkok-SP.geojson';
+var SAGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/10-bangkok-SA.geojson';
+var STGeojsonUrl = 'https://wazeth.github.io/mapsproject/geojson/10-bangkok-ST.geojson';
 
 var selectedLayer = null;
 var originalStyles = {};
