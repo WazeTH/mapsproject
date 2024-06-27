@@ -1,11 +1,32 @@
 var map = L.map('map').setView([14.0, 100.5], 9);
-
+/*
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: '&copy; <a href="https://www.esri.com">Esri</a> | <a href="https://sites.google.com/view/waze-thailand/others/licenses">CC BY-IGO</a> | Waze Thailand',
     maxZoom: 18,
     tileSize: 256,
     zoomOffset: 0
 }).addTo(map);
+*/
+var ESRIImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.esri.com">Esri</a> | <a href="https://sites.google.com/view/waze-thailand/others/licenses">CC BY-IGO</a> | Waze Thailand',
+    maxZoom: 18,
+    tileSize: 256,
+    zoomOffset: 0
+});
+
+var googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a> | <a href="https://sites.google.com/view/waze-thailand/others/licenses">CC BY-IGO</a> | Waze Thailand''
+});
+
+arcgisImagery.addTo(map);
+var baseLayers = {
+    "ArcGIS World Imagery (ESRI)": arcgisImagery,
+    "Google Satellite": googleSat
+};
+
+L.control.layers(baseLayers).addTo(map);
 
 var mapElement = document.getElementById('map');
 var geojsonPrefix = mapElement.getAttribute('data-geojson-prefix');
