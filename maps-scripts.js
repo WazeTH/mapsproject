@@ -7,7 +7,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
     zoomOffset: 0
 }).addTo(map);
 */
-var ESRIImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+var arcgisImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: '&copy; <a href="https://www.esri.com">Esri</a> | <a href="https://sites.google.com/view/waze-thailand/others/licenses">CC BY-IGO</a> | Waze Thailand',
     maxZoom: 18,
     tileSize: 256,
@@ -22,7 +22,7 @@ var googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
 
 arcgisImagery.addTo(map);
 var baseLayers = {
-    "ArcGIS World Imagery (ESRI)": ESRIImagery,
+    "ArcGIS World Imagery (ESRI)": arcgisImagery,
     "Google Satellite": googleSat
 };
 
