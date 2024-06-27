@@ -22,7 +22,7 @@ var googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
 
 arcgisImagery.addTo(map);
 var baseLayers = {
-    "ArcGIS World Imagery (ESRI)": arcgisImagery,
+    "ArcGIS World Imagery (ESRI)": ESRIImagery,
     "Google Satellite": googleSat
 };
 
