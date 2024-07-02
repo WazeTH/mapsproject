@@ -95,7 +95,7 @@ fetch(geojsonUrl)
 
                         updateTable(feature.properties);
 
-                        map.fitBounds(layer.getBounds());
+                        // map.fitBounds(layer.getBounds());
                     });
 
                     layer.on('mouseover', function (e) {
