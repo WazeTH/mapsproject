@@ -212,3 +212,10 @@
         color: white; 
         line-height: 0.9;
     }
+
+    .copy-button {
+    margin-left: 10px;
+    padding: 3px 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+    }
