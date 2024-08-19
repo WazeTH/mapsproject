@@ -312,9 +312,52 @@ function updateTable(properties) {
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             cell1.innerHTML = '<strong>' + displayName + '</strong>';
+            
             if (prop === "ADM1_PCODE" || prop === "ADM2_PCODE" || prop === "ADM3_PCODE") {
                 var numericCode = properties[prop].substring(2);
                 cell2.innerHTML = numericCode;
+            } else if (prop === "ADM3_TH") {
+                cell2.innerHTML = properties[prop] + ' ';
+
+                var copyButton = document.createElement('button');
+                copyButton.innerHTML = '📋';
+                copyButton.style.border = '1px solid #ccc';
+                copyButton.style.background = '#f9f9f9';
+                copyButton.style.borderRadius = '20%';
+                copyButton.style.padding = '3px';
+                copyButton.style.cursor = 'pointer';
+                copyButton.style.position = 'relative';
+                copyButton.onclick = function() {
+                    var textToCopy;
+                    if (properties["ADM1_PCODE"] === "10") {
+                        textToCopy = 'เขต' + properties["ADM2_TH"] + ' ' + properties["ADM1_TH"];
+                    } else {
+                        textToCopy = 'ต.' + properties["ADM3_TH"] + ' อ.' + properties["ADM2_TH"] + ' จ.' + properties["ADM1_TH"];
+                    }
+                    copyToClipboard(textToCopy);
+
+                    var overlay = document.createElement('div');
+                    overlay.innerHTML = 'คัดลอกแล้ว';
+                    overlay.style.position = 'absolute';
+                    overlay.style.bottom = '-15px';
+                    overlay.style.left = '50%';
+                    overlay.style.transform = 'translateX(-50%)';
+                    overlay.style.background = '#000';
+                    overlay.style.color = '#fff';
+                    overlay.style.padding = '2px 5px';
+                    overlay.style.borderRadius = '3px';
+                    overlay.style.fontSize = '10px';
+                    overlay.style.whiteSpace = 'nowrap';
+                    overlay.style.zIndex = '1000';
+                    copyButton.appendChild(overlay);
+                    
+                    copyButton.disabled = true;
+                    setTimeout(function() {
+                        copyButton.disabled = false;
+                        overlay.remove();
+                    }, 5000);
+                };
+                cell2.appendChild(copyButton);
             } else {
                 cell2.innerHTML = properties[prop];
             }
@@ -520,4 +563,15 @@ function clearLocation() {
         document.getElementById('attributeTable').style.display = 'none'; // Hide the attribute table
         document.getElementById('message').style.display = 'block'; // Show the message
     }
+}
+
+function copyToClipboard(text) {
+    var tempInput = document.createElement('input');
+    tempInput.style.position = 'absolute';
+    tempInput.style.left = '-9999px';
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
 }
